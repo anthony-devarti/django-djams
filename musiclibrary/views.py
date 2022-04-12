@@ -16,5 +16,7 @@ def index(request):
     return JsonResponse({ 'data' : recent3 })
 
 def song_find(request, song_id):
-    response = "This is song number %s."
-    return HttpResponse(response % song_id)
+    response = Song.objects.all()
+    filtered = response.filter(exact__id=1)
+    formatted = list(filtered.values())
+    return HttpResponse({'data':formatted})
