@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-ej4-4-3i25uq(k%72^#@2b83a0zj=(r6bs628z4p09%toe9cq4
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.gitpod.io',
+]
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Application definition
@@ -37,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'musiclibrary.apps.MusiclibraryConfig'
+    'musiclibrary.apps.MusiclibraryConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,5 +130,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CSRF_TRUSTED_ORIGINS = ['https://gitpod.io']
